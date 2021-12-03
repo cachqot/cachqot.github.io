@@ -1,0 +1,124 @@
+body{
+  margin:0em;
+}
+
+.stage1{
+  animation: back 1s forwards;
+  height:100vh;
+}
+@keyframes back{
+  0%{
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(0, 0, 0, 0.678)), url(back.png);
+  }
+  100%{
+    background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url(back.png);
+  }
+}
+
+/*header*/
+.fheader .menu{
+  text-decoration: none;
+  color:#fff;
+  margin:7px;
+  font-size:1.8em;
+}
+.fheader a{
+  text-decoration:none; 
+}
+.fheader{
+  animation: fadedown 2s forwards;
+}
+
+@keyframes fadedown{
+  0%{
+    transform:TranslateY(-10px);
+    opacity:0;
+  }
+  50%{
+    transform:TranslateY(-10px);
+    opacity:0;
+  }
+  80%{
+    opacity:1;
+  }
+  100%{
+    transform:TranslateY(0px);
+    opacity:1;
+  }
+}
+
+/*froze_logo*/
+
+.frozeos_logo{
+    position: absolute;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) 
+}
+.frozeos_img{
+    z-index:10000;
+    width:170px;
+    height:170px;
+    animation: img_display 0.5s 1 forwards;
+}
+.frozeos_text{
+  color:#0ff;
+  font-size:4.5em;
+  animation: slideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+
+@keyframes display_text{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-180px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/*****************************/
+
+.stage2{
+  color:#fff;
+  background:#050022;
+  height:220vh;
+}
+.stage2 a{
+  color:#f50;
+}
+.stage3{
+  color:#fff;
+  background:#3d59a7;
+  height:150vh;
+}
+.stage4{
+  color:#fff;
+  background:#3891b4;
+  height:200vh;
+}
+
+#sita_menu{
+  background:#444444;
+  padding-top:60px;
+  padding-left:60px;
+  color:#fff;
+  text-shadow: 0px 0px 5px #ffffff;
+}
+
+#sita_menu a{
+  color:#fff;
+  text-decoration: none;
+}
