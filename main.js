@@ -12,6 +12,7 @@ footer_html = ''
 +'</ul>'
 +'</span>'
 
+footer_html_under = ''
 +'<span class="menu">'
 +'<ul>'
 +'    <span style="color:#888888">accounts</span>'
@@ -32,8 +33,14 @@ footer_html = ''
 +'</ul>'
 +'</span>'
 
+
 if(document.getElementsByTagName("footer")[0] != null){
     document.getElementsByTagName("footer")[0].innerHTML = footer_html
+
+    //スマホじゃない場合はメニューを追加する
+    if(!navigator.userAgent.match(/iPhone|Android.+Mobile/)){
+        document.getElementsByTagName("footer")[0].innerHTML += footer_html_under
+    }
 }
 
 header_html = ''
