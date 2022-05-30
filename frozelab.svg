@@ -6,11 +6,11 @@
     <stop id="g4" offset="100%" stop-color="#00f0f0" stop-opacity="1"/>
   </linearGradient>
   <linearGradient id="gt1"  x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop id="g3" offset="0%" stop-color="#dd1133" stop-opacity="1"/>
-    <stop id="g4" offset="100%" stop-color="#aa00ff" stop-opacity="1"/>
+    <stop id="g3" offset="0%" stop-color="#00dd00" stop-opacity="1"/>
+    <stop id="g4" offset="100%" stop-color="#00ddd0" stop-opacity="1"/>
   </linearGradient>
  </defs>
 
-	<path d="M138 57 L 57 138 L -57 138 L -138 57 L -138 -57 L -57 -138 L 57 -138 L 138 -57 z" style="fill:url(#grad);"></path>
-	<text x="-135" y="15" font-family="Segoe UI" font-size="49" fill="url(#gt1)">Cachqot Lab</text>
+	<path d="M138 57 L 57 138 L -57 138 L -138 57 L -138 -57 L -57 -138 L 57 -138 L 138 -57 z" style="fill:url(#grad)"></path>
+	<text x="-135" y="15" font-family="Verdana" font-size="60" fill="url(#gt1)">FrozeLab</text>
 </svg>
