@@ -1,4 +1,4 @@
-var url="https://frozelab.net/"
+var url="https://cachqot.com/"
 footer_html = ''
 +'            <span class="logo">'
 +'<ul>'
