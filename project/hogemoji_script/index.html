@@ -1,47 +1,155 @@
-<!DOCTYPE html>
 <html>
     <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../style.css">
-    <title>Froze Lab - Github profile prompt</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../../logo.svg">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/modal.css">
+        <link rel="icon" type="text/svg" href="logo.svg">
+        <title>hogemoji script editor v0.03 beta</title>
     </head>
 
     <body>
-        <div class="header">
+
+        <!---
+            開発に追われない日々（）
+
+
+
+            vwvwvwwvvwvwwvwvwwwvwvwvwvwvw
+            #############################
+            #############################
+            #############################
+            #############################
+            #############################
+            #############################
+            java vm版作りたい
+
+
+
+            開発に追われる日々（）
+        -->
+
+        <header>
+            <ul class="menu">
+                    <span style="border:1px solid #aaaaaa;color:#888888;font-size:1.2em;">hogemoji script editor v0.03 beta</span>
+                <li>
+                    ファイル
+                    <ul>
+                        <li onclick="download_code()">保存</li>
+                        <li><a href="#open">開く</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    ドキュメント
+                    <ul>
+                        <li><a href="https://rihitosan.com/blog/hogemoji_docintr.html">紹介</a></li>
+                        <li><a href="https://github.com/frozelab/hogemoji_script">Github</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <div class="contents">
+
+            <div class="list">
+                <div id="help_coding">
+                    <li>Coding help</li>
+                    <br>
+                    <span class="help_button" style="border: solid 2px #ff00ff;" onclick='make_code("function")'>関数（命令）を作成</span>
+                </div>
+                <div id="emoji_list">
+                    <span style="color:#00ffaa;">basic</span>
+                    <table>
+                        <tr>
+                        </tr>
+                      </table>
+                      <hr>
+                      <span style="color:#6aa1f3;">window</span>
+                      <table>
+                        <tr>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+
+            <div class="list">
+
+                <div class="contents main" >
+                    <div id="line_num">
+                    
+                    </div>
+
+                    <div contenteditable="true" id="editor">
+
+                    </div>
+                </div>
+                <button class="button" onclick="run()">run</button>
+                <div id="output">
+                    
+                </div>
+            </div>
         </div>
 
-        <center>
-        <div style="padding-top:10em;">
-        <img src="logo.svg" style="width:200px;"><br>
-        <span style="font-size:1.2em;">hogemoji script</span>
-        <br><br><br>
 
-        プログラミング言語のグローバル化と教育目的の利用を考慮して開発されたプログラミング言語。<br>
-        絵文字を使用してプログラミングすることにより、言語の壁を解決しようと言うプロジェクトです。<br><br>
-        要は、テキストプログラミング言語のテキストのところを絵文字に変えただけです。<br><br>
+        <!--modal window-->
+          <div class="modal-wrapper" id="open">
+            <a href="#!" class="modal-overlay"></a>
+            <div class="modal-window">
+              <div class="modal-content">
 
-        これはエディタの画面です。<br>
-        分かりやすいUIと絵文字があり、絵文字や文字をエディタに入力していくことでプログラミングをすることができます。<br><br>
-        <img src="editor.png"></div><br><br>
-        今はまだあまり成長していませんが、これからこのプロジェクトも成長すると勝手に願っています。<br><br>
+                <div id="upFileWrap">
+                    <div id="inputFile">
+                        <!-- ドラッグ&ドロップエリア -->
+                        <p id="dropArea">ここにファイルをドロップしてください<br>または</p>
+                
+                        <!-- 通常のinput[type=file] -->
+                        <div id="inputFileWrap">
+                            <input type="file" name="uploadFile" id="uploadFile" accept=".hge">
+                            <div id="btnInputFile"><span>ファイルを選択する</span></div>
+                            <div id="btnChangeFile"><span>ファイルを変更する</span></div>
+                        </div>
+                    </div>
+                </div>
 
-        <span style="font-size:1.6em;">Doc</span><br><br>
-        <a href="https://rihitosan.com/blog/hogemoji_docintr.html">https://rihitosan.com/blog/hogemoji_docintr.html</a><br><br>
-        <span style="font-size:1.6em;">DEMO</span><br><br>
-        <a href="https://rihitosan.com/tools/hogemoji_script/">https://rihitosan.com/tools/hogemoji_script/</a><br><br>
-        <span style="font-size:1.6em;">Github</span><br><br>
-        <a href="https://github.com/frozelab/hogemoji_script/">https://github.com/frozelab/hogemoji_script/</a><br>
-        </div>
-
-        </center>
+              </div>
+              <a href="#!" class="modal-close">×</a>
+            </div>
+          </div>
 
 
-        <div style="padding-top:200px;"></div>
 
-        <footer>
-        </footer>
-        <script src="../../main.js"></script>
+                  <!--gui support window (game)-->
+                  <div class="modal-wrapper" id="gui">
+                    <a href="#!" class="modal-overlay"></a>
+                    <div class="modal-window">
+                      <div class="modal-content">
+                          <div id="help_content">
+                              <canvas width="500" height="400" id="gui_support" style="background:#000000;"></canvas>
+                          </div>
+                      </div>
+                      <a href="#!" class="modal-close">×</a>
+                    </div>
+                  </div>
+
+
+
+                  <!--coding help window-->
+                  <div class="modal-wrapper" id="help_window">
+                    <a href="#!" class="modal-overlay"></a>
+                    <div class="modal-window">
+                      <div class="modal-content">
+                          <div id="help_content">
+                              <center>
+                                <span style="color:#fff;">comming soon...</span>
+                              </center>
+                          </div>
+                      </div>
+                      <a href="#!" class="modal-close">×</a>
+                    </div>
+                  </div>
+
     </body>
+    <script src="editor.js"></script>
+    <script src="window.js"></script>
+    <script src="main.js"></script>
 </html>
